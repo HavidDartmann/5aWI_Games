@@ -17,20 +17,14 @@ public class ObjectsGame extends BasicGame {
     public void init(GameContainer gameContainer) throws SlickException {
         this.actors = new ArrayList<>();
         Random random = new Random();
-        for (int i = 0; i < 10; i++) {
-            Rectangle rectangle = new Rectangle(random.nextInt(400), random.nextInt(590), random.nextFloat(), Rectangle.Direction.UP);
-            this.actors.add(rectangle);
-        }
+        MoveStrategy mr1 = new MoveRight(0, 0, 0.3f);
+        MoveStrategy mr2 = new MoveLeft(500, 100, 0.1f);
 
-        for(int i = 0; i < 10; i++) {
-            Circle circle = new Circle();
-            this.actors.add(circle);
-        }
 
-        for (int i = 0; i < 10; i++) {
-            Ellipse ellipse = new Ellipse(random.nextInt(800), random.nextInt(600));
-            this.actors.add(ellipse);
-        }
+        this.actors.add(new Circle(mr1));
+        this.actors.add(new Circle(mr2));
+
+
     }
 
     @Override
