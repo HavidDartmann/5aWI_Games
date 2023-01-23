@@ -1,6 +1,6 @@
 package at.har.patterns.factory;
 
-public class Ant extends    AbstractActor  {
+public class Ant extends AbstractActor  {
 
     public Ant(String name) {
         super(name);
